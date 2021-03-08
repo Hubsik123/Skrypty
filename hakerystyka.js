@@ -106,6 +106,6 @@ function Funkcja_2()
     }
     else
     {
-        alert("I co magicznie jedną 1/4 chcesz zrobic?");
+        alert("I co magicznie jedną 1/4 chcesz zrobić?");
     }
 }
