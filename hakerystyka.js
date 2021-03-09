@@ -1,4 +1,6 @@
-//! V 1.1; 8 Marca 2021; By Hubsik
+//! V 1.2;
+// 9 Marca 2021
+// By Hubsik
 
 function Funkcja_1(Element, ID_Class_Tag, Nr_Elementu = 0, Czas_Trwania = 2500, Ilosc_Iteracji = "Infinity")
 {
@@ -46,66 +48,26 @@ function Funkcja_1(Element, ID_Class_Tag, Nr_Elementu = 0, Czas_Trwania = 2500, 
     }
 }
 
-var Snap = false
-function Funkcja_2()
+function Funkcja_2(Znacznik)
 {
-    if (!Snap) 
+    Ilosc = document.getElementsByTagName(Znacznik).length;
+    for (var x = 0; x < Ilosc; x++)
     {
-        //var Main = document.getElementById("Main");
-        var Linki = document.getElementsByTagName("a");
-        var Akapity = document.getElementsByTagName("p");
-        var Naglowki_1 = document.getElementsByTagName("h1");
-        var Naglowki_2 = document.getElementsByTagName("h2");
-        var Naglowki_3 = document.getElementsByTagName("h3");
-        //! Linki
-        for (var x = 0; x < Linki.length; x++)
+        var RNG = Math.floor((Math.random() * 10) + 1);
+        if (RNG % 2 == 0)
         {
-            var RNG = Math.floor((Math.random() * 10) + 1);
-            if (RNG % 2 == 0)
-            {
-                document.getElementsByTagName("a")[x].style.display = "none";
-            }
+            document.getElementsByTagName(Znacznik)[x].style.display = "none";
         }
-        //! Akapity
-        for (var x = 0; x < Akapity.length; x++)
-        {
-            var RNG = Math.floor((Math.random() * 10) + 1);
-            if (RNG % 2 == 0)
-            {
-                document.getElementsByTagName("p")[x].style.display = "none";
-            }
-        }
-        //! Nahgłówki h1
-        for (var x = 0; x < Naglowki_1.length; x++)
-        {
-            var RNG = Math.floor((Math.random() * 10) + 1);
-            if (RNG % 2 == 0)
-            {
-                document.getElementsByTagName("h1")[x].style.display = "none";
-            }
-        }
-        //! Nahgłówki h2
-        for (var x = 0; x < Naglowki_2.length; x++)
-        {
-            var RNG = Math.floor((Math.random() * 10) + 1);
-            if (RNG % 2 == 0)
-            {
-                document.getElementsByTagName("h2")[x].style.display = "none";
-            }
-        }
-        //! Nahgłówki h3
-        for (var x = 0; x < Naglowki_3.length; x++)
-        {
-            var RNG = Math.floor((Math.random() * 10) + 1);
-            if (RNG % 2 == 0)
-            {
-                document.getElementsByTagName("h3")[x].style.display = "none";
-            }
-        }
-        Snap = true;
     }
-    else
+}
+
+function Funkcja_3(Selektor, Co_Stylowac)
+{
+    var Litery = '0123456789ABCDEF';
+    var Kolor = '#';
+    for (var x = 0; x < 6; x++)
     {
-        alert("I co magicznie jedną 1/4 chcesz zrobić?");
+        Kolor += Litery[Math.floor(Math.random() * 16)];
     }
+    $(Selektor).css(Co_Stylowac, Kolor);
 }
