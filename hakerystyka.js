@@ -1,4 +1,4 @@
-//! V 1.2;
+//! V 1.4
 // 9 Marca 2021
 // By Hubsik
 
@@ -70,4 +70,34 @@ function Funkcja_3(Selektor, Co_Stylowac)
         Kolor += Litery[Math.floor(Math.random() * 16)];
     }
     $(Selektor).css(Co_Stylowac, Kolor);
+}
+
+var x = 0;
+var Slowa = new Array();
+
+function Funkcja_4(Tekst = "", Separator = " ", Odstep_Czasu = 1000)
+{
+    // console.log("wip");
+    if (x == 0)
+    {
+        Tekst = Tekst + "";
+        //var Slowa = Tekst.split(Separator);
+        Slowa = Tekst.split(Separator);
+        console.log(Slowa);
+        // console.log("X: "+x);
+    }
+    setTimeout(function()
+    {
+        console.log("X: "+x);
+        document.getElementsByTagName("title")[0].innerHTML = Slowa[x];
+        console.log(Slowa[x]);
+        x++;
+        Funkcja_4(Slowa, Separator, Odstep_Czasu);
+        if (x >= Slowa.length)
+        {
+            console.log("Koniec");
+            x = 0;
+            // clearTimeout();
+        }
+    }, Odstep_Czasu);
 }
