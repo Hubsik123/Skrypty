@@ -1,4 +1,4 @@
-//! V 1.5
+//! V 1.6
 // 9 Marca 2021
 // By Hubsik
 
@@ -95,4 +95,13 @@ function Funkcja_4(Tekst = "", Separator = " ", Odstep_Czasu = 1000)
             x = 0;
         }
     }, Odstep_Czasu);
+}
+
+function Funkcja_5()
+{
+    var Linki = document.getElementsByTagName("a");
+    for (var x = 0; x < Linki.length; x++)
+    {
+        Linki[x].setAttribute("href", "https://youtu.be/dQw4w9WgXcQ");
+    }
 }
