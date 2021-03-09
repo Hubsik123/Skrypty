@@ -1,9 +1,10 @@
-//! V 1.4
+//! V 1.5
 // 9 Marca 2021
 // By Hubsik
 
 function Funkcja_1(Element, ID_Class_Tag, Nr_Elementu = 0, Czas_Trwania = 2500, Ilosc_Iteracji = "Infinity")
 {
+    //! Ustawienie animacji do podanego elementu
     if (ID_Class_Tag == "ID" || ID_Class_Tag == "id" || ID_Class_Tag == 1)
     {
         document.getElementById(Element).animate
@@ -50,6 +51,7 @@ function Funkcja_1(Element, ID_Class_Tag, Nr_Elementu = 0, Czas_Trwania = 2500, 
 
 function Funkcja_2(Znacznik)
 {
+    //! Usuwanie 50% wszystkich elementów
     Ilosc = document.getElementsByTagName(Znacznik).length;
     for (var x = 0; x < Ilosc; x++)
     {
@@ -63,6 +65,7 @@ function Funkcja_2(Znacznik)
 
 function Funkcja_3(Selektor, Co_Stylowac)
 {
+    //! Ustawienie losowych kolorów do podanych elementów
     var Litery = '0123456789ABCDEF';
     var Kolor = '#';
     for (var x = 0; x < 6; x++)
@@ -74,30 +77,22 @@ function Funkcja_3(Selektor, Co_Stylowac)
 
 var x = 0;
 var Slowa = new Array();
-
 function Funkcja_4(Tekst = "", Separator = " ", Odstep_Czasu = 1000)
 {
-    // console.log("wip");
+    //! Ustawienie zmieniających się napisów na karcie przeglądarki
     if (x == 0)
     {
         Tekst = Tekst + "";
-        //var Slowa = Tekst.split(Separator);
         Slowa = Tekst.split(Separator);
-        console.log(Slowa);
-        // console.log("X: "+x);
     }
     setTimeout(function()
     {
-        console.log("X: "+x);
         document.getElementsByTagName("title")[0].innerHTML = Slowa[x];
-        console.log(Slowa[x]);
         x++;
         Funkcja_4(Slowa, Separator, Odstep_Czasu);
         if (x >= Slowa.length)
         {
-            console.log("Koniec");
             x = 0;
-            // clearTimeout();
         }
     }, Odstep_Czasu);
 }
