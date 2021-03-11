@@ -1,5 +1,5 @@
-//! V 1.6
-// 9 Marca 2021
+//! V 1.7
+// 11 Marca 2021
 // By Hubsik
 
 function Funkcja_1(Element, ID_Class_Tag, Nr_Elementu = 0, Czas_Trwania = 2500, Ilosc_Iteracji = "Infinity")
@@ -77,7 +77,7 @@ function Funkcja_3(Selektor, Co_Stylowac)
 
 var x = 0;
 var Slowa = new Array();
-function Funkcja_4(Tekst = "", Separator = " ", Odstep_Czasu = 1000)
+function Funkcja_4(Tekst, Separator = " ", Odstep_Czasu = 1000)
 {
     //! Ustawienie zmieniających się napisów na karcie przeglądarki
     if (x == 0)
@@ -99,9 +99,34 @@ function Funkcja_4(Tekst = "", Separator = " ", Odstep_Czasu = 1000)
 
 function Funkcja_5()
 {
+    var Mozliwe_Linki =
+    [
+        "https://youtu.be/dQw4w9WgXcQ", // Klasyka
+        "http://www.elektronik.rzeszow.pl/tematyczne/Historia/Glowna/Yaap.html", // Elektronik Rzeszow 2k21
+        "https://youtu.be/ZZ5LpwO-An4", // HEYYEYAAEYAAAEYAEYAA
+        "https://youtu.be/N9qYF9DZPdw", // White & Nerdy
+        "https://www.youtube.com/watch?v=7Zm1hPbmzPw", // Africa 60seconds
+        "https://youtu.be/FyyTzkktjsI", // Skeletor & Pleasent Day
+        "https://youtu.be/3MMMe1drnZY?t=101", // Guardians' Inferno
+        "https://youtu.be/U9t-slLl30E?t=36", // Seagulls
+    ];
     var Linki = document.getElementsByTagName("a");
     for (var x = 0; x < Linki.length; x++)
     {
-        Linki[x].setAttribute("href", "https://youtu.be/dQw4w9WgXcQ");
+        var RNG = Math.floor(Math.random() * Mozliwe_Linki.length);
+        Linki[x].setAttribute("href", Mozliwe_Linki[RNG]);
     }
+}
+
+function Funkcja_6(Znacznik, Nr_Elementu = 0, System_Liczbowy = 2)
+{
+    var Element = document.getElementsByTagName(Znacznik)[Nr_Elementu];
+    var Ascii, Nowa_Tresc = "";
+    for (var x = 0; x < Element.innerHTML.length; x++)
+    {
+        Ascii = Element.innerHTML.charCodeAt(x);
+        Nowa_Tresc += Ascii.toString(System_Liczbowy) + " ";
+    }
+    console.log(Nowa_Tresc);
+    Element.innerHTML = Nowa_Tresc;
 }
