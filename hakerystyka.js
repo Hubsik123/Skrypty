@@ -1,5 +1,6 @@
 //! V 1.6
 // 9 Marca 2021
+
 // By Hubsik
 
 function Funkcja_1(Element, ID_Class_Tag, Nr_Elementu = 0, Czas_Trwania = 2500, Ilosc_Iteracji = "Infinity")
